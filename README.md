@@ -1,3 +1,4 @@
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DMPlayer-brightgreen.svg?style=flat)](http://android-arsenal.com/details/3/3407)
 # DMPlayer
 DMPLayer is an Android music player prototype 
 
