@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recyclerview_item_click_support" type="id"/>
+    <item name="recyclerview_item_selection_support" type="id"/>
+</resources>

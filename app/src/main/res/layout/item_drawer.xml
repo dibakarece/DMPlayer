@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutDrawerItem"
+    style="?android:attr/borderlessButtonStyle"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="start">
+
+    <FrameLayout
+        android:id="@+id/item_row"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/imageViewDrawerIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_action_design" />
+
+        <TextView
+            android:id="@+id/textViewDrawerItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="72dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="72dp"
+            android:fontFamily="sans-serif-medium"
+            android:singleLine="true"
+            android:text="Drawer title"
+            android:textColor="@color/md_text"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/item_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/md_divider" />
+
+</RelativeLayout>

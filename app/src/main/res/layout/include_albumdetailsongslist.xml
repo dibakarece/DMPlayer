@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+
+    <RelativeLayout
+        android:id="@+id/scrol_slidecontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="36dp"
+        android:background="@color/md_white_1000">
+
+        <TextView
+            android:id="@+id/tv_albumname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="76dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:singleLine="true"
+            android:text="Love Story 2015"
+            android:textColor="@color/md_text"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/txt_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_albumname"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <com.dmplayer.uicomponent.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/illo_default_artistradio_portrait"
+                app:border_color="@android:color/transparent"
+                app:border_width="0dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp">
+
+                <TextView
+                    android:id="@+id/tv_title_frst"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:singleLine="true"
+                    android:text="Love Story 2015"
+                    android:textColor="@color/md_secondary_text_icons"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_title_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_title_frst"
+                    android:layout_marginRight="76dp"
+                    android:layout_marginTop="1dp"
+                    android:singleLine="true"
+                    android:text="Love Story 2015"
+                    android:textColor="@color/md_secondary_text_icons"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <com.dmplayer.uicomponent.ExpandableHeightListView
+            android:id="@+id/recycler_allSongs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txt_layout"
+            android:layout_marginBottom="?attr/actionBarSize"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/white"
+            android:scrollbars="none"></com.dmplayer.uicomponent.ExpandableHeightListView>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/fab_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bar_selector_white"
+        android:src="@drawable/ic_fab_play_btn_normal_1" />
+
+
+</RelativeLayout>

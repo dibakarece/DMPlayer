@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_white_1000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewCover"
+            android:layout_width="match_parent"
+            android:layout_height="172dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/drawer_header" />
+
+    </RelativeLayout>
+
+    <!-- Set visibility to visible to edit -->
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/md_white_1000"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:overScrollMode="never" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/ic_heart_outline_white1" android:state_selected="true" />
+    <item android:drawable="@drawable/ic_heart_outline_white" android:state_selected="false" />
+    <item android:drawable="@drawable/ic_heart_outline_white" />
+</selector>

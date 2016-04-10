@@ -1,0 +1,10 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="parallax_image_height">320dp</dimen>
+    <dimen name="parallax_image_height_ancor">360dp</dimen>
+
+    <!-- Bottom control panel-->
+    <dimen name="bottom_control_panel">150dp</dimen>
+</resources>

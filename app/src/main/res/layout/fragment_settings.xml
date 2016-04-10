@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white" >
+    <TextView
+        android:id="@+id/textViewAdvancedSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:text="Advanced Settings"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+        android:textColor="?attr/colorAccent"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutChooseTheme"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/imageViewPhone3"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:padding="-6dp"
+            android:src="@drawable/ic_hardware_phone_android_3"
+            android:tint="?attr/colorAccent" />
+
+        <ImageView
+            android:id="@+id/imageViewPhone2"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:padding="-6dp"
+            android:src="@drawable/ic_hardware_phone_android_2"
+            android:tint="?attr/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/imageViewPhone"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:padding="-6dp"
+            android:src="@drawable/ic_hardware_phone_android"
+            android:tint="?attr/colorAccent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="64dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Choose App Theme"
+                android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                android:textColor="@color/md_text"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textViewThemeDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Press to change the primary, primary dark and accent colors"
+                android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                android:textColor="@color/md_secondary_text_icons"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/md_divider" />
+
+    </RelativeLayout>
+</LinearLayout>

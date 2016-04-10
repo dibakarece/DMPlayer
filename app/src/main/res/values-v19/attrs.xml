@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="fitsSystemWindows">false</bool>
+    <bool name="translucentStatusBar">true</bool>
+    <bool name="translucentNavigationBar">true</bool>
+    <dimen name="statusBarHeight">25dp</dimen>
+    <dimen name="space">48dp</dimen>
+    <color name="inset">#0000</color>
+</resources>
