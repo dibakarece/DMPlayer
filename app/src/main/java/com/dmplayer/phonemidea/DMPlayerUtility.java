@@ -13,15 +13,19 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.widget.ImageView;
 
 import com.dmplayer.ApplicationDMPlayer;
 import com.dmplayer.R;
@@ -347,5 +351,28 @@ public class DMPlayerUtility {
         });
         animatorSet.start();
     }
+
+
+    public static void changeColorSet(Context context, ImageView img, boolean isSelected) {
+        try {
+            if (!isSelected) {
+                img.setColorFilter(Color.WHITE);
+                return;
+            }
+
+            final TypedValue typedValue = new TypedValue();
+            context.getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);
+            final int color = typedValue.data;
+            img.setColorFilter(color);
+            if (Build.VERSION.SDK_INT > 15) {
+                img.setImageAlpha(255);
+            } else {
+                img.setAlpha(255);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

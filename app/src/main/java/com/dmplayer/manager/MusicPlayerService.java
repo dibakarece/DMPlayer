@@ -127,6 +127,7 @@ public class MusicPlayerService extends Service implements AudioManager.OnAudioF
         try {
             String songName = mSongDetail.getTitle();
             String authorName = mSongDetail.getArtist();
+            String albumName = mSongDetail.getDisplay_name();
             SongDetail audioInfo = MediaController.getInstance().getPlayingSongDetail();
 
             RemoteViews simpleContentView = new RemoteViews(getApplicationContext().getPackageName(), R.layout.player_small_notification);
@@ -196,6 +197,7 @@ public class MusicPlayerService extends Service implements AudioManager.OnAudioF
             if (supportBigNotifications) {
                 notification.bigContentView.setTextViewText(R.id.player_song_name, songName);
                 notification.bigContentView.setTextViewText(R.id.player_author_name, authorName);
+//                notification.bigContentView.setTextViewText(R.id.player_albumname, albumName);
             }
             notification.flags |= Notification.FLAG_ONGOING_EVENT;
             startForeground(5, notification);

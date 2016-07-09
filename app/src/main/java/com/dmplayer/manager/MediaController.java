@@ -28,6 +28,7 @@ import com.dmplayer.phonemidea.DMPlayerUtility;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -50,7 +51,8 @@ public class MediaController implements NotificationManager.NotificationCenterDe
 
     private int lastTag = 0;
     public int currentPlaylistNum;
-    private boolean shuffleMusic;
+    public static boolean shuffleMusic = false;
+    public static int repeatMode = 0;
 
     private final Object progressTimerSync = new Object();
     private Timer progressTimer = null;
@@ -63,7 +65,6 @@ public class MediaController implements NotificationManager.NotificationCenterDe
     public int type = 0;
     public int id = -1;
     public String path = "";
-    private int repeatMode;
 
     private static volatile MediaController Instance = null;
 
@@ -252,7 +253,7 @@ public class MediaController implements NotificationManager.NotificationCenterDe
     private void playNextSong(boolean byStop) {
         ArrayList<SongDetail> currentPlayList = shuffleMusic ? MusicPreferance.shuffledPlaylist : MusicPreferance.playlist;
 
-        if (byStop && repeatMode == 2) {
+        if (byStop && repeatMode == 1) {
             cleanupPlayer(false, false);
             playAudio(currentPlayList.get(currentPlaylistNum));
             return;
@@ -464,6 +465,39 @@ public class MediaController implements NotificationManager.NotificationCenterDe
         return playAudio(current);
     }
 
+
+    /**
+     * Shuffle The SongList
+     *
+     * @param songList
+     */
+    public static void shuffleList(ArrayList<SongDetail> songs) {
+        if (MusicPreferance.shuffledPlaylist.isEmpty()) {
+            ArrayList<SongDetail> songList = new ArrayList<SongDetail>(songs);
+            int n = songList.size();
+            Random random = new Random();
+            random.nextInt();
+            for (int i = 0; i < n; i++) {
+                int change = i + random.nextInt(n - i);
+                swap(songList, i, change);
+            }
+            MusicPreferance.shuffledPlaylist = songList;
+        }
+    }
+
+    private static void swap(ArrayList<SongDetail> songList, int i, int change) {
+        SongDetail helper = songList.get(i);
+        songList.set(i, songList.get(change));
+        songList.set(change, helper);
+    }
+
+    /**
+     * seekToProgress functionsl for Audio Progress
+     *
+     * @param mSongDetail
+     * @param progress
+     * @return
+     */
     public boolean seekToProgress(SongDetail mSongDetail, float progress) {
         if (audioTrackPlayer == null && audioPlayer == null) {
             return false;
@@ -480,6 +514,13 @@ public class MediaController implements NotificationManager.NotificationCenterDe
         return true;
     }
 
+    /**
+     * When Get Stop Player, clear the Object instance
+     *
+     * @param context
+     * @param notify
+     * @param stopService
+     */
     public void cleanupPlayer(Context context, boolean notify, boolean stopService) {
         MusicPreferance.saveLastSong(context, getPlayingSongDetail());
         MusicPreferance.saveLastSongListType(context, type);
@@ -489,6 +530,12 @@ public class MediaController implements NotificationManager.NotificationCenterDe
         cleanupPlayer(notify, stopService);
     }
 
+    /**
+     * When Get Stop Player, clear the Object instance
+     *
+     * @param notify
+     * @param stopService
+     */
     public void cleanupPlayer(boolean notify, boolean stopService) {
         pauseAudio(getPlayingSongDetail());
         stopProximitySensor();
