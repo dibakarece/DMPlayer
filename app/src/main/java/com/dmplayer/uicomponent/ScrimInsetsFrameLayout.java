@@ -43,7 +43,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
         if (a == null) {
             return;
         }
-        mInsetForeground = a.getDrawable(R.styleable.ScrimInsetsView_insetForeground_ui);
+        mInsetForeground = a.getDrawable(R.styleable.ScrimInsetsView_insetForeground);
         a.recycle();
 
         setWillNotDraw(true);

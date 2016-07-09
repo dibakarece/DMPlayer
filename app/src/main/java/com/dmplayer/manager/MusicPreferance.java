@@ -112,28 +112,4 @@ public class MusicPreferance {
             playingSongDetail = playlist.get(0);
         return playlist;
     }
-
-    public static void setRepeat(Context context, int isOn) {
-        SharedPreferences.Editor editor = getPreferanse(context).edit();
-        editor.putInt("repeat", isOn);
-        editor.commit();
-    }
-
-    public static int getRepeat(Context context) {
-        SharedPreferences mSharedPreferences = getPreferanse(context);
-        return mSharedPreferences.getInt("repeat", 0);
-    }
-
-
-    public static void setShuffel(Context context, boolean isOn) {
-        SharedPreferences.Editor editor = getPreferanse(context).edit();
-        editor.putBoolean("shuffel", isOn);
-        editor.commit();
-    }
-
-    public static boolean getShuffel(Context context) {
-        SharedPreferences mSharedPreferences = getPreferanse(context);
-        return mSharedPreferences.getBoolean("shuffel", false);
-    }
-
 }

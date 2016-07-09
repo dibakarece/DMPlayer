@@ -88,15 +88,15 @@
             android:scrollbars="none"></com.dmplayer.uicomponent.ExpandableHeightListView>
     </RelativeLayout>
 
-    <android.support.design.widget.FloatingActionButton
+    <ImageView
         android:id="@+id/fab_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:src="@drawable/ic_action_play" />
-
+        android:background="@drawable/bar_selector_white"
+        android:src="@drawable/ic_fab_play_btn_normal_1" />
 
 
 </RelativeLayout>

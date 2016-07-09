@@ -125,7 +125,7 @@
             android:gravity="center_vertical|right"
             android:paddingBottom="15dp"
             android:paddingTop="15dp"
-            android:src="@drawable/ic_selector_repeat" />
+            android:src="@drawable/ic_repeat_dark" />
     </LinearLayout>
 
 </LinearLayout>

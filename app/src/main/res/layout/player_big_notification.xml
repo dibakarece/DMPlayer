@@ -104,7 +104,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/bar_selector_white"
                 android:scaleType="center"
-                android:src="@drawable/ic_rew_dark" />
+                android:src="@drawable/ic_action_previous" />
 
             <ImageView
                 android:id="@+id/player_pause"
@@ -135,7 +135,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/bar_selector_white"
                 android:scaleType="center"
-                android:src="@drawable/ic_fwd_dark" />
+                android:src="@drawable/ic_action_next" />
         </LinearLayout>
     </FrameLayout>
 
