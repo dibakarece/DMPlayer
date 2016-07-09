@@ -1,3 +1,8 @@
+/*
+ * This is the source code of DMPLayer for Android v. 1.0.0.
+ * You should have received a copy of the license in this archive (see LICENSE).
+ * Copyright @Dibakar_Mistry, 2015.
+ */
 package com.dmplayer.manager;
 
 import android.app.Activity;
@@ -107,4 +112,28 @@ public class MusicPreferance {
             playingSongDetail = playlist.get(0);
         return playlist;
     }
+
+    public static void setRepeat(Context context, int isOn) {
+        SharedPreferences.Editor editor = getPreferanse(context).edit();
+        editor.putInt("repeat", isOn);
+        editor.commit();
+    }
+
+    public static int getRepeat(Context context) {
+        SharedPreferences mSharedPreferences = getPreferanse(context);
+        return mSharedPreferences.getInt("repeat", 0);
+    }
+
+
+    public static void setShuffel(Context context, boolean isOn) {
+        SharedPreferences.Editor editor = getPreferanse(context).edit();
+        editor.putBoolean("shuffel", isOn);
+        editor.commit();
+    }
+
+    public static boolean getShuffel(Context context) {
+        SharedPreferences mSharedPreferences = getPreferanse(context);
+        return mSharedPreferences.getBoolean("shuffel", false);
+    }
+
 }

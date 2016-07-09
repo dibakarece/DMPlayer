@@ -1,3 +1,8 @@
+/*
+ * This is the source code of DMPLayer for Android v. 1.0.0.
+ * You should have received a copy of the license in this archive (see LICENSE).
+ * Copyright @Dibakar_Mistry, 2015.
+ */
 package com.dmplayer.uicomponent;
 
 import android.content.Context;
@@ -38,7 +43,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
         if (a == null) {
             return;
         }
-        mInsetForeground = a.getDrawable(R.styleable.ScrimInsetsView_insetForeground);
+        mInsetForeground = a.getDrawable(R.styleable.ScrimInsetsView_insetForeground_ui);
         a.recycle();
 
         setWillNotDraw(true);

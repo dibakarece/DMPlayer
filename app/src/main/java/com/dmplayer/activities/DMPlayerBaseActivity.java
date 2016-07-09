@@ -1,3 +1,8 @@
+/*
+ * This is the source code of DMPLayer for Android v. 1.0.0.
+ * You should have received a copy of the license in this archive (see LICENSE).
+ * Copyright @Dibakar_Mistry, 2015.
+ */
 package com.dmplayer.activities;
 
 import android.app.Activity;
@@ -196,11 +201,18 @@ public class DMPlayerBaseActivity extends ActionBarActivity implements View.OnCl
                 break;
 
             case R.id.btn_suffel:
-
+                v.setSelected(v.isSelected() ? false : true);
+                MediaController.getInstance().shuffleMusic = v.isSelected() ? true : false;
+                MusicPreferance.setShuffel(context, (v.isSelected() ? true : false));
+                MediaController.getInstance().shuffleList(MusicPreferance.playlist);
+                DMPlayerUtility.changeColorSet(context, (ImageView) v, v.isSelected());
                 break;
 
             case R.id.btn_toggle:
-
+                v.setSelected(v.isSelected() ? false : true);
+                MediaController.getInstance().repeatMode = v.isSelected() ? 1 : 0;
+                MusicPreferance.setRepeat(context, (v.isSelected() ? 1 : 0));
+                DMPlayerUtility.changeColorSet(context, (ImageView) v, v.isSelected());
                 break;
 
             case R.id.bottombar_img_Favorite:
@@ -462,6 +474,16 @@ public class DMPlayerBaseActivity extends ActionBarActivity implements View.OnCl
 
         ((PlayPauseView) findViewById(R.id.bottombar_play)).setOnClickListener(this);
         ((PlayPauseView) findViewById(R.id.btn_play)).setOnClickListener(this);
+
+        imgbtn_toggle.setSelected((MusicPreferance.getRepeat(context) == 1) ? true : false);
+        MediaController.getInstance().shuffleMusic = imgbtn_toggle.isSelected() ? true : false;
+        DMPlayerUtility.changeColorSet(context, (ImageView) imgbtn_toggle, imgbtn_toggle.isSelected());
+
+        imgbtn_suffel.setSelected(MusicPreferance.getShuffel(context) ? true : false);
+        MediaController.getInstance().repeatMode = imgbtn_suffel.isSelected() ? 1 : 0;
+        DMPlayerUtility.changeColorSet(context, (ImageView) imgbtn_suffel, imgbtn_suffel.isSelected());
+
+        MediaController.getInstance().shuffleList(MusicPreferance.playlist);
 
         mLayout.setPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
