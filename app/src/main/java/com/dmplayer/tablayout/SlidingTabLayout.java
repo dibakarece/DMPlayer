@@ -1,8 +1,3 @@
-/*
- * This is the source code of DMPLayer for Android v. 1.0.0.
- * You should have received a copy of the license in this archive (see LICENSE).
- * Copyright @Dibakar_Mistry, 2015.
- */
 package com.dmplayer.tablayout;
 
 import android.content.Context;
@@ -22,6 +17,23 @@ import android.widget.TextView;
 
 import com.dmplayer.R;
 
+
+/**
+ * To be used with ViewPager to provide a tab indicator component which give constant feedback as to
+ * the user's scroll progress.
+ * <p/>
+ * To use the component, simply add it to your view hierarchy. Then in your
+ * {@link android.app.Activity} or {@link android.support.v4.app.Fragment} call
+ * {@link #setViewPager(ViewPager)} providing it the ViewPager this layout is being used for.
+ * <p/>
+ * The colors can be customized in two ways. The first and simplest is to provide an array of colors
+ * via {@link #setSelectedIndicatorColors(int...)}. The
+ * alternative is via the {@link TabColorizer} interface which provides you complete control over
+ * which color is used for any individual position.
+ * <p/>
+ * The views used as tabs can be customized by calling {@link #setCustomTabView(int, int)},
+ * providing the layout ID of your custom layout.
+ */
 public class SlidingTabLayout extends HorizontalScrollView {
     /**
      * Allows complete control over the colors drawn in the tab layout. Set with
